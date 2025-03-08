@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://dytpdhu4oqegb"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_4l8sv"]
+[ext_resource type="Texture2D" uid="uid://cqld561am2yqf" path="res://graphics/player_idle.png" id="2_jdxk5"]
+[ext_resource type="Texture2D" uid="uid://brqrg2ryinjfk" path="res://graphics/player_forward.png" id="3_k6op8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnuhq"]
+atlas = ExtResource("2_jdxk5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spaus"]
+atlas = ExtResource("2_jdxk5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isd1q"]
+atlas = ExtResource("2_jdxk5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5rhe"]
+atlas = ExtResource("3_k6op8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydil"]
+atlas = ExtResource("3_k6op8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxpj6"]
+atlas = ExtResource("3_k6op8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugp5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnuhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spaus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isd1q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5rhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxpj6")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(5, 5)
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_4l8sv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, 1.19209e-07)
+sprite_frames = SubResource("SpriteFrames_ugp5o")
+animation = &"idle"
+frame_progress = 0.319059
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, 8, 4, 8, 4, 7, 3, 7, 3, 6, 2, 6, 2, 1, 4, 1, 4, 2, 5, 2, 5, 3, 6, 3, 6, 5, 5, 5, 5, 7, 6, 7, 6, 8, 7, 8, 7, 7, 8, 7, 8, 2, 7, 2, 7, 1, 6, 1, 6, -1, 5, -1, 5, -2, 4, -2, 4, -3, 3, -3, 3, -5, 2, -5, 2, -6, 1, -6, 1, -8, -1, -8, -1, -6, -2, -6, -2, -5, -3, -5, -3, -3, -4, -3, -4, -2, -5, -2, -5, -1, -6, -1, -6, 1, -7, 1, -7, 2, -8, 2, -8, 7, -7, 7, -7, 8, -6, 8, -6, 7, -5, 7, -5, 5, -6, 5, -6, 3, -5, 3, -5, 2, -4, 2, -4, 1, -2, 1, -2, 6, -3, 6, -3, 7, -4, 7)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -8)

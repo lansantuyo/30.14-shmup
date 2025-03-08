@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvt2rlbiifhct"]
+
+[ext_resource type="Texture2D" uid="uid://h6n2l3sglk1v" path="res://graphics/enemy_o1.png" id="1_xrkk0"]
+
+[node name="enemy_o1" type="Area2D"]
+rotation = 3.14159
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xrkk0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, 6, -3, 6, -3, 5, -2, 5, -2, 4, -1, 4, -1, 5, 1, 5, 1, 4, 2, 4, 2, 5, 3, 5, 3, 6, 5, 6, 5, 4, 4, 4, 4, 3, 3, 3, 3, 2, 4, 2, 4, -4, 3, -4, 3, -5, 2, -5, 2, -6, 1, -6, 1, -2, -1, -2, -1, -6, -2, -6, -2, -5, -3, -5, -3, -4, -4, -4, -4, 2, -3, 2, -3, 3, -4, 3, -4, 4, -5, 4)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.2517e-06, 13.2)
+scale = Vector2(0.334473, 0.139451)

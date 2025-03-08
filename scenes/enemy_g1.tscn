@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2h80syl1ayk"]
+
+[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="1_6w1hm"]
+[ext_resource type="Texture2D" uid="uid://64l8sl63jmat" path="res://graphics/enemy_g1.png" id="1_xyj4i"]
+
+[node name="enemy_g1" type="Area2D"]
+rotation = 3.14159
+scale = Vector2(5, 5)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_6w1hm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xyj4i")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, 6, -3, 6, -3, 5, -2, 5, -2, 4, -1, 4, -1, 5, 1, 5, 1, 4, 2, 4, 2, 5, 3, 5, 3, 6, 5, 6, 5, 4, 4, 4, 4, 3, 3, 3, 3, 2, 4, 2, 4, -4, 3, -4, 3, -5, 2, -5, 2, -6, 1, -6, 1, -2, -1, -2, -1, -6, -2, -6, -2, -5, -3, -5, -3, -4, -4, -4, -4, 2, -3, 2, -3, 3, -4, 3, -4, 4, -5, 4)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.2517e-06, 13.2)
+scale = Vector2(0.334473, 0.139451)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

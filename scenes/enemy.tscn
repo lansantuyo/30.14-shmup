@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw03427pvr3ij"]
+
+[ext_resource type="Texture2D" uid="uid://64l8sl63jmat" path="res://graphics/enemy_g1.png" id="1_kw51n"]
+[ext_resource type="Texture2D" uid="uid://bfasdu05le74n" path="res://graphics/enemy_o2.png" id="2_8eqd8"]
+[ext_resource type="Texture2D" uid="uid://h6n2l3sglk1v" path="res://graphics/enemy_o1.png" id="3_lhy3k"]
+[ext_resource type="Texture2D" uid="uid://bhw76rwlndjoa" path="res://graphics/enemy_g2.png" id="4_0h83c"]
+
+[node name="enemy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 1)
+texture = ExtResource("1_kw51n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Enemy12" type="Sprite2D" parent="."]
+position = Vector2(-14, 1)
+texture = ExtResource("2_8eqd8")
+
+[node name="Enemy2" type="Sprite2D" parent="."]
+position = Vector2(21, 4)
+texture = ExtResource("3_lhy3k")
+
+[node name="Enemy22" type="Sprite2D" parent="."]
+position = Vector2(3, 14)
+texture = ExtResource("4_0h83c")

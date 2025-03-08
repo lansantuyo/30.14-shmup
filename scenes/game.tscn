@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cogxepsqlti1a"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_vrnf5"]
+[ext_resource type="PackedScene" uid="uid://dytpdhu4oqegb" path="res://scenes/player.tscn" id="2_bpxu3"]
+[ext_resource type="PackedScene" uid="uid://bdcqdm28tqrcx" path="res://scenes/lazer.tscn" id="3_b5evb"]
+[ext_resource type="PackedScene" uid="uid://bvt2rlbiifhct" path="res://scenes/enemy_o1.tscn" id="4_7xmcn"]
+[ext_resource type="PackedScene" uid="uid://be2h80syl1ayk" path="res://scenes/enemy_g1.tscn" id="5_edxl3"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_vrnf5")
+
+[node name="Player" parent="." instance=ExtResource("2_bpxu3")]
+position = Vector2(286, 506)
+
+[node name="Spawnpoint" type="Marker2D" parent="."]
+position = Vector2(270, 850)
+
+[node name="Lazer" parent="." instance=ExtResource("3_b5evb")]
+position = Vector2(177, 888)
+
+[node name="lazer_container" type="Node2D" parent="."]
+
+[node name="enemy_o1" parent="." instance=ExtResource("4_7xmcn")]
+position = Vector2(231, 145)
+
+[node name="enemy_g1" parent="." instance=ExtResource("5_edxl3")]
+position = Vector2(327, 142)
