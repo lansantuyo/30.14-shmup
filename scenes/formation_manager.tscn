@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3n1o13d4na8u"]
+
+[ext_resource type="Script" path="res://scripts/formation_manager.gd" id="1_pydtv"]
+
+[node name="FormationManager" type="Node2D"]
+script = ExtResource("1_pydtv")

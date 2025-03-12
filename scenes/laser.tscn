@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdcqdm28tqrcx"]
 
-[ext_resource type="Script" path="res://scripts/lazer.gd" id="1_1d2in"]
+[ext_resource type="Script" path="res://scripts/laser.gd" id="1_1d2in"]
 [ext_resource type="Texture2D" uid="uid://c7ldlvbxc3ics" path="res://graphics/bullet.png" id="2_evj1x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52qsp"]
 radius = 3.0
 height = 36.0
 
-[node name="Lazer" type="Area2D"]
+[node name="laser" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_1d2in")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ty00t4yih24"]
+
+[ext_resource type="PackedScene" uid="uid://be2h80syl1ayk" path="res://scenes/enemy_g1.tscn" id="1_a06p8"]
+[ext_resource type="Texture2D" uid="uid://h6n2l3sglk1v" path="res://graphics/enemy_o1.png" id="2_tcim0"]
+
+[node name="orange_shooter" instance=ExtResource("1_a06p8")]
+max_health = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_tcim0")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+visible = false

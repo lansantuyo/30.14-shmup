@@ -2,26 +2,27 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_vrnf5"]
 [ext_resource type="PackedScene" uid="uid://dytpdhu4oqegb" path="res://scenes/player.tscn" id="2_bpxu3"]
-[ext_resource type="PackedScene" uid="uid://bdcqdm28tqrcx" path="res://scenes/lazer.tscn" id="3_b5evb"]
-[ext_resource type="PackedScene" uid="uid://bvt2rlbiifhct" path="res://scenes/enemy_o1.tscn" id="4_7xmcn"]
-[ext_resource type="PackedScene" uid="uid://be2h80syl1ayk" path="res://scenes/enemy_g1.tscn" id="5_edxl3"]
+[ext_resource type="PackedScene" uid="uid://b1ty00t4yih24" path="res://scenes/shooter_enemy.tscn" id="2_mrpxr"]
+[ext_resource type="PackedScene" uid="uid://be2h80syl1ayk" path="res://scenes/enemy_g1.tscn" id="3_fw32w"]
+[ext_resource type="PackedScene" uid="uid://c3n1o13d4na8u" path="res://scenes/formation_manager.tscn" id="4_lgwok"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_vrnf5")
+enemy_scenes = Array[PackedScene]([ExtResource("2_mrpxr"), ExtResource("3_fw32w")])
+formation_manager_scene = ExtResource("4_lgwok")
+
+[node name="enemy_spawn_timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_bpxu3")]
-position = Vector2(286, 506)
+position = Vector2(273, 844)
 
 [node name="Spawnpoint" type="Marker2D" parent="."]
 position = Vector2(270, 850)
 
-[node name="Lazer" parent="." instance=ExtResource("3_b5evb")]
-position = Vector2(177, 888)
+[node name="laser_container" type="Node2D" parent="."]
 
-[node name="lazer_container" type="Node2D" parent="."]
+[node name="enemy_container" type="Node2D" parent="."]
 
-[node name="enemy_o1" parent="." instance=ExtResource("4_7xmcn")]
-position = Vector2(231, 145)
-
-[node name="enemy_g1" parent="." instance=ExtResource("5_edxl3")]
-position = Vector2(327, 142)
+[connection signal="timeout" from="enemy_spawn_timer" to="." method="_on_enemy_spawn_timer_timeout"]
